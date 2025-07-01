@@ -1,9 +1,11 @@
 name: Dummy GitHub Action
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      buildingBlockRun:
+        description: "Building Block Run Object"
+        required: true
 
 jobs:
   dummy-job:
