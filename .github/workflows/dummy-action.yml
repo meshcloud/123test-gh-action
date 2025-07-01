@@ -1,0 +1,30 @@
+name: Dummy GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dummy-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Print hello world
+        run: echo "Hello, world! This is a dummy GitHub Action running."
+
+      - name: List files in repo
+        run: |
+          echo "Listing files in the repository:"
+          ls -la
+
+      - name: Finish message
+        run: echo "Dummy GitHub Action completed successfully."
